@@ -6,6 +6,7 @@ const fs = require("fs");
 const moment = require("moment");
 const Jimp = require("jimp");
 const db = require("quick.db");
+const token = process.env.token;
 var prefix = ayarlar.prefix;
 
 client.on("ready", () => {
@@ -22,7 +23,7 @@ const log = message => {
 ////////////// ALTI ELLEME
 require("./util/eventLoader")(client);
 
-client.login(ayarlar.token);
+client.login(token);
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
