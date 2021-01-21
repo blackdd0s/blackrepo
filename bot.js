@@ -7,6 +7,7 @@ const moment = require("moment");
 const Jimp = require("jimp");
 const db = require("quick.db");
 const token = process.env.token;
+const database = require('quick.db');
 var prefix = ayarlar.prefix;
 
 client.on("ready", () => {
@@ -19,29 +20,26 @@ const log = message => {
 
 ///////////// KOMUTLAR BAŞ
 
-client.on('guildMemberAdd', async member => {//jail
-const data = require('quick.db')
-const asd = data.fetch(`${member.guild.id}.jail.${member.id}`)
-if(asd) {
-let data2 = await data.fetch(`jailrol_${member.guild.id}`)
-let rol = member.guild.roles.cache.get(data2)
-if(!rol) return;
-let kişi = member.guild.members.cache.get(member.id)
-kişi.roles.add(rol.id);
-kişi.roles.cache.forEach(r => {
-kişi.roles.remove(r.id)
-data.set(`${member.guild.id}.jail.${kişi.id}.roles.${r.id}`, r.id )})
-    data.set(`${member.guild.id}.jail.${kişi.id}`, 'nobles')
-  const noples = new Discord.MessageEmbed()
-  .setAuthor(member.user.tag, member.user.avatarURL())
-  .setColor(`#f3c7e1`)
-  .setDescription(`çıkma len xd xd xd!`)
-  .setTimestamp()
-    member.send(noples)
-} 
-  
-  
-})
+client.on('ready', () => {
+client.guilds.cache.forEach(guild => {
+guild.members.cache.forEach(async member => {
+const fetch = await database.fetch(member.user.id);
+if(!fetch) return;
+if((Date.now() <= fetch.end) || fetch) {
+let kalan = fetch.end - Date.now();
+let logChannelID = ayarlar.muteLogKanalID;
+let logChannel = await guild.channels.cache.get(logChannelID);
+setTimeout(() => {
+const embed = new Discord.MessageEmbed()
+.setAuthor(fetch.moderatorUsername, fetch.moderatorAvatarURL);
+return member.roles.remove(ayarlar.mutedRolID).then(() => database.delete(member.user.id) && logChannel.send(embed.setColor('GREEN').setTitle('Susturulması açıldı.').setDescription(`**• Moderatör**: <@!${fetch.moderatorID}>
+**• Susturulan**: <@!${member.user.id}>
+**• Sebep**: ${fetch.reason}`)));
+}, kalan);
+};
+});
+});
+});
 
 ////////////// KOMUTLAR SON
 ////////////// ALTI ELLEME
