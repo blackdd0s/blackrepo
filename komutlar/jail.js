@@ -6,17 +6,12 @@ const prefix = ayarlar.prefix;
 module.exports.run = async (client, message, args) => {
 let db = require('quick.db')
 let botisim = message.guild.members.cache.get(client.user.id).displayName
-let data = await db.fetch(`jailrol_${message.guild.id}`)
-let data2 = await db.fetch(`jailyetkilisi_${message.guild.id}`)
-if(!data2)  return message.channel.send(`Jail yetkilisi rolünü bulamadım.`)
-let data3 = await db.fetch(`jailkanal_${message.guild.id}`)
-if(!data3)  return message.channel.send(`Jail kanalını bulamadım.`)
+let data = ayarlar.jailRolID
+let data2 = ayarlar.jailYetkiliRolID
+let data3 = ayarlar.jailKanalID
 let rol = message.guild.roles.cache.get(data)
-if(!rol) return message.channel.send(`Jail rolü ayarlı değil.`)
 let yetkili = message.guild.roles.cache.get(data2)
-if(!yetkili) return message.channel.send(`Jail yetkilisi ayarlı değil.`)
 let kanal = message.guild.channels.cache.get(data3)
-if(!kanal) return message.channel.send(`Jail log kanalı ayarlı değil.`)
 
   if (!message.member.roles.cache.has(`${yetkili.id}`)) return message.channel.send(`**${ayarlar.prefix}jail** isimli komutu kullanabilmek için ${yetkili} rolüne sahip olman gerekiyor.`)
   let kişi = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
@@ -55,7 +50,7 @@ if(!sebep) sebep = 'Sebep belirtilmemiş.'
     kişi.roles.cache.forEach(r => {
 kişi.roles.remove(r.id)
 db.set(`${message.guild.id}.jail.${kişi.id}.roles.${r.id}`, r.id )})
-    db.set(`${message.guild.id}.jail.${kişi.id}`, 'codare')
+    db.set(`${message.guild.id}.jail.${kişi.id}`, 'nobles')
     kanal.send(wasted)
     message.channel.send(`${kişi} isimli kişi başarıyla hapishaneye gönderildi.`)
     setTimeout(async () =>{
