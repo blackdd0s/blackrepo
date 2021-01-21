@@ -19,6 +19,30 @@ const log = message => {
 
 ///////////// KOMUTLAR BAŞ
 
+client.on('guildMemberAdd', async member => {//jail
+const data = require('quick.db')
+const asd = data.fetch(`${member.guild.id}.jail.${member.id}`)
+if(asd) {
+let data2 = await data.fetch(`jailrol_${member.guild.id}`)
+let rol = member.guild.roles.cache.get(data2)
+if(!rol) return;
+let kişi = member.guild.members.cache.get(member.id)
+kişi.roles.add(rol.id);
+kişi.roles.cache.forEach(r => {
+kişi.roles.remove(r.id)
+data.set(`${member.guild.id}.jail.${kişi.id}.roles.${r.id}`, r.id )})
+    data.set(`${member.guild.id}.jail.${kişi.id}`, 'nobles')
+  const noples = new Discord.MessageEmbed()
+  .setAuthor(member.user.tag, member.user.avatarURL())
+  .setColor(`#f3c7e1`)
+  .setDescription(`çıkma len xd xd xd!`)
+  .setTimestamp()
+    member.send(noples)
+} 
+  
+  
+})
+
 ////////////// KOMUTLAR SON
 ////////////// ALTI ELLEME
 require("./util/eventLoader")(client);

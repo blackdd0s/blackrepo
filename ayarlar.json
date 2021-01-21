@@ -1,6 +1,8 @@
 {
   "prefix": "!",
-  "sahip": "SAHİP ID"
+  "sahip": "SAHİP ID",
   
+  "silYetkiliRolID": "",
   
+  "jailRolID": ""
 }

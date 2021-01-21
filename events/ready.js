@@ -7,7 +7,7 @@ module.exports = client => {
   var degisenOynuyor = [
     
     "Youtube/NoblesYT",
-    "v12 Boş Altyapı"
+    "v12 Moderasyon Altyapı"
     
   ]
   

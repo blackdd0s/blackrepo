@@ -1,12 +1,13 @@
 const { MessageEmbed } = require("discord.js");
-const ayarlar = require("../a")
+const ayarlar = require("../ayarlar.json");
+const yetkili = ayarlar.silYetkiliRolID;
 
 exports.run = (Bot, Mesaj, Argüman) => {
   const Sayı = Number(Argüman[0]);
   
   const yetkiliuyarı = new MessageEmbed()
 .setAuthor(Bot.user.username, Bot.user.avatarURL())
-.setDescription(`Bu Komutu Kullanmak İçin <@&${yetkili}> Yetkisine Sahip Olman Gerek!`)
+.setDescription(`:x: Bu Komutu Kullanmak İçin <@&${yetkili}> Yetkisine Sahip Olman Gerek!`)
 .setColor(`RED`)
 
     if(!Mesaj.member.roles.cache.has(yetkili)) return Mesaj.channel.send(yetkiliuyarı)
