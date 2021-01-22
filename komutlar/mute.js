@@ -46,7 +46,7 @@ const embed = new Discord.MessageEmbed()
 message.channel.send(`Başarılı, ***${member.user.tag}*** susturuldu.`);
 logChannel.send(embed);
 setTimeout(() => {
-return member.roles.remove('mute rolünün idsini yazın').then(() => database.delete(member.user.id) && logChannel.send(embed.setColor('GREEN').setTitle('Susturulması açıldı.').setDescription(`**• Moderatör**: ${message.author}
+return member.roles.remove(ayarlar.mutedRolID).then(() => database.delete(member.user.id) && logChannel.send(embed.setColor('GREEN').setTitle('Susturulması açıldı.').setDescription(`**• Moderatör**: ${message.author}
 **• Susturulan**: <@!${member.user.id}>
 **• Sebep**: ${reason}`)));
 }, ms(args[1]+' '+args[2].replace('dakika', 'minutes').replace('saat', 'hours').replace('saniye', 'seconds').replace('gün', 'day')));
