@@ -3,7 +3,7 @@ const data = require('quick.db')
 const moment = require('moment')
 const jdb = new data.table("cezalar");
 const kdb = new data.table("kullanici");
-const ayarlar = require("../ayarlar.json")
+const ayarlar = require("../ayarlar.json");
 exports.run = async (client, message, args) => { 
   
  const permError = new MessageEmbed()
@@ -13,26 +13,8 @@ exports.run = async (client, message, args) => {
     .setDescription(`Bu Komutu Kullanmak İçin <@&${ayarlar.banYetkiliRolID}> Yetkisine Sahip Olmalısın!`) 
   
 if (!message.member.roles.cache.has(ayarlar.banYetkiliRolID)) return message.channel.send(permError); 
-return message.channel.send(new MessageEmbed().setDescription(`${message.author} Komutu kullanmak için yetkin bulunmamakta.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
   
 const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.banLogKanalID)
-
-
-let tumaylar = {
-"01": "Ocak",  
-"02": "Şubat", 
-"03": "Mart",  
-"04": "Nisan",  
-"05": "Mayıs", 
-"06": "Haziran", 
-"07": "Temmuz",
-"08": "Ağustos", 
-"09": "Eylül", 
-"10": "Ekim", 
-"11": "Kasım", 
-"12": "Aralık", 
-}
-let aylar = tumaylar;  
   
 if (args[0] && (args[0].includes('bilgi') || args[0].includes('info'))){
 if(!args[1] || isNaN(args[1])) return message.channel.send(new MessageEmbed().setDescription(`${message.author}, Geçerli bir ban yemiş kullanıcı ID'si belirtmelisin.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp()).then(x => x.delete({timeout: 5000}));

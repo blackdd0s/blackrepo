@@ -1,6 +1,6 @@
 # YOUTUBE KANALIMA ABONE OLMAYI UNUTMAYIN
 
-[Nobles Kanalına Gitmek İçin Tıkla](https://www.youtube.com/noblesyt)
+[Nobles Youtube Kanalına Gitmek İçin Tıkla](https://www.youtube.com/noblesyt)
 
 [Nobles Discord Sunucusuna Gitmek İçin Tıkla](https://discord.gg/Rs5ss84)
 
@@ -12,5 +12,6 @@ Oynuyor events/ready.js İçinde
 
 # Bulunan Komutlar
 
-- Sil/Temizle
+- Sil-Temizle
 - Mute/Unmute
+- Ban/Unban
