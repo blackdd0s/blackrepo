@@ -37,14 +37,7 @@ kullanici.ban({reason: sebep}).then(x => message.react('✅')).catch();
                     data.add('case', 1)
                     const numara = await data.fetch('case')
                       moment.locale("tr");
-                  kdb.push(`kullanici.${kullanici.id}.sicil`, {
-                    Yetkili: message.author.id,
-                    Sebep: sebep,
-                    Ceza: "BAN",
-                    Süre: "Sınırsız",
-                    cezano: numara,
-                    Tarih: (`${moment(Date.now()).add(10,"hours").format("HH:mm:ss DD MMMM YYYY")}`) 
-                  });
+                  
                 };    
 message.channel.send(new MessageEmbed().setDescription(`${message.author} tarafından ${kullanici} \`${sebep}\` Sebebiyle Sunucudan Yasaklandı.`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()) 
 banlog.send(new MessageEmbed().setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('RANDOM').setTimestamp().setDescription(`**Sunucudan Yasaklandı !**\n**Banlayan Yetkili:** ${message.author.id} (\`${message.author.id}\`)\n**Banlanan Üye:** ${kullanici.user.tag} (\`${kullanici.user.id}\`)\n**Tarih:** \`${moment(Date.now()).add(10,"hours").format("HH:mm:ss DD MMMM YYYY")}\` `));

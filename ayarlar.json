@@ -1,6 +1,6 @@
 {
   "prefix": "!",
-  "sahip": "SAHİP ID",
+  "sahip": "",
   
   "silYetkiliRolID": "",
   "muteYetkiliRolID": "",
@@ -9,5 +9,6 @@
   "mutedRolID": "",
   
   "muteLogKanalID": "",
-  "banLogKanalID": ""
+  "banLogKanalID": "",
+  "vmuteLogKanalID": ""
 }
