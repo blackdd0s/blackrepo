@@ -4,10 +4,7 @@ const moment = require('moment')
 const jdb = new data.table("cezalar");
 const kdb = new data.table("kullanici");
 const ayarlar = require("../ayarlar.json")
-exports.run = async (client, message, args) => {
-
-  
-//-------------------------------------------------------------------------------\\  
+exports.run = async (client, message, args) => { 
   
  const permError = new MessageEmbed()
     .setColor('RED')
@@ -19,8 +16,6 @@ if (!message.member.roles.cache.has(ayarlar.banYetkiliRolID)) return message.cha
 return message.channel.send(new MessageEmbed().setDescription(`${message.author} Komutu kullanmak için yetkin bulunmamakta.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
   
 const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.banLogKanalID)
-  
-//-------------------------------------------------------------------------------\\
 
 
 let tumaylar = {
