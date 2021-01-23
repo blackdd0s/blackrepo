@@ -8,11 +8,13 @@
   "banYetkiliRolID": "",
   "mutedRolID": "",
   "mutedRolİsim": "",
+  "jailedRolID": "",
   
   "muteLogKanalID": "",
   "unmuteLogKanalID": "",
   "banLogKanalID": "",
   "unbanLogKanalID": "",
   "vmuteLogKanalID": "",
-  "unvmuteLogKanalID": ""
+  "unvmuteLogKanalID": "",
+  "jailLogID": ""
 }

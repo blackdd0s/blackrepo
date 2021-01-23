@@ -17,3 +17,4 @@ Oynuyor events/ready.js İçinde
 - Ban/Unban
 - Vmute/Unvmute
 - Ban Sorgula
+- Afk

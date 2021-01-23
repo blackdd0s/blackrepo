@@ -44,7 +44,7 @@ return member.roles.remove(ayarlar.mutedRolID).then(() => database.delete(member
 });
 
 client.on('guildMemberAdd', async(member) => {
-let mute = member.guild.roles.cache.find(r => r.id === ayarlar.mutedRolİsim);
+let mute = member.guild.roles.cache.find(r => r.name === ayarlar.mutedRolİsim);
 let mutelimi = db.fetch(`muteli_${member.guild.id + member.id}`)
 let süre = db.fetch(`süre_${member.id + member.guild.id}`)
 if (!mutelimi) return;
