@@ -8,7 +8,7 @@
 
 Oynuyor events/ready.js İçinde
 
-# Thanks Atmayanı ve Videoya Like Atmayanı Altyapı Siksin
+- Thanks Atmayanı ve Videoya Like Atmayanı Altyapı Siksin
 
 # Bulunan Komutlar
 
@@ -18,3 +18,5 @@ Oynuyor events/ready.js İçinde
 - Vmute/Unvmute
 - Ban Sorgula
 - Afk
+- Jail/Unjail
+- Say

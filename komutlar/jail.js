@@ -9,17 +9,16 @@ const prefix = ayarlar.prefix;
 
 module.exports.run = async (client, message, args) => {
 
-//-------------------------------------------------------------------------------\\
+const permError = new MessageEmbed()
+    .setColor('RED')
+    .setTitle('Başarısız')
+    .setAuthor(message.author.tag, message.author.avatarURL({ size:1024, dynamic:true, format: "png"}))
+    .setDescription(`Bu Komutu Kullanmak İçin <@&${ayarlar.jailYetkiliRolID}> Yetkisine Sahip Olmalısın!`) 
   
-if(!["YETKILI ROL ID"].some(role => message.member.roles.cache.get(role)) && (!message.member.hasPermission("ADMINISTRATOR"))) 
-return message.channel.send(new MessageEmbed().setDescription(`${message.author} Komutu kullanmak için yetkin bulunmamakta.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
+if (!message.member.roles.cache.has(ayarlar.jailYetkiliRolID)) return message.channel.send(permError); 
   
-const muterol = message.guild.roles.cache.find(r => r.id === ayarlar.jailedRolID)
-const jaillog = message.guild.channels.cache.find(c => c.id === '')
-
-//-------------------------------------------------------------------------------\\
-
-
+const cezalırol = message.guild.roles.cache.find(r => r.id === ayarlar.jailedRolID)
+const jaillog = message.guild.channels.cache.find(c => c.id === ayarlar.jailLogID)
 
 let kullanici = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));
 let zaman = args[1]
@@ -70,14 +69,6 @@ db.set(`süreJail_${message.mentions.users.first().id + message.guild.id}`, zama
                     db.add('case', 1)
                     const numara = await db.fetch('case')
                     moment.locale("tr");
-                  kdb.push(`kullanici.${kullanici.id}.sicil`, {
-                    Yetkili: message.author.id,
-                    Sebep: sebep,
-                    Ceza: "JAIL",
-                    Süre: vakit,
-                    cezano: numara,
-                    Tarih: (`${moment(Date.now()).add(10,"hours").format("HH:mm:ss DD MMMM YYYY")}`) 
-                  });
                 };
 kullanici.roles.add(cezalırol);
 kullanici.roles.cache.forEach(r => {

@@ -90,6 +90,24 @@ data.delete(`display.${message.author.id}.${message.guild.id}`)
 
 })
 
+client.on('guildMemberAdd', async(member) => {
+let rol = member.guild.roles.cache.find(r => r.name === ayarlar.jailedRoldİsim);
+let cezalımı = db.fetch(`cezali_${member.guild.id + member.id}`)
+let sürejail = db.fetch(`süreJail_${member.id + member.guild.id}`)
+if (!cezalımı) return;
+if (cezalımı == "cezali") {
+member.roles.add(ayarlar.jailedRoldID)
+ 
+member.send("Cezalıyken Sunucudan Çıktığın için Yeniden Cezalı Rolü Verildi!")
+ setTimeout(function(){
+    // msg.channel.send(`<@${user.id}> Muten açıldı.`)
+db.delete(`cezali_${member.guild.id + member.id}`)
+    member.send(`<@${member.id}> Cezan açıldı.`)
+    member.roles.remove(ayarlar.jailedRoldID);
+  }, ms(sürejail));
+}
+})
+
 ////////////// KOMUTLAR SON
 ////////////// ALTI ELLEME
 require("./util/eventLoader")(client);

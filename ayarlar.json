@@ -2,13 +2,18 @@
   "prefix": "!",
   "sahip": "",
   
+  "tag": "",
+  
   "silYetkiliRolID": "",
   "muteYetkiliRolID": "",
   "vmuteYetkilisiRolID": "",
   "banYetkiliRolID": "",
+  "jailYetkiliRolID": "",
+  
   "mutedRolID": "",
   "mutedRolİsim": "",
   "jailedRolID": "",
+  "jailedRoldİsim": "",
   
   "muteLogKanalID": "",
   "unmuteLogKanalID": "",
@@ -16,5 +21,6 @@
   "unbanLogKanalID": "",
   "vmuteLogKanalID": "",
   "unvmuteLogKanalID": "",
-  "jailLogID": ""
+  "jailLogID": "",
+  "unjailLogID": ""
 }
