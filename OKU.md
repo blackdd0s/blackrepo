@@ -15,3 +15,5 @@ Oynuyor events/ready.js İçinde
 - Sil-Temizle
 - Mute/Unmute
 - Ban/Unban
+- Vmute/Unvmute
+- Ban Sorgula
