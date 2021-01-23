@@ -7,3 +7,10 @@
 # Bilgiler
 
 Oynuyor events/ready.js İçinde
+
+# Thanks Atmayanı ve Videoya Like Atmayanı Altyapı Siksin
+
+# Bulunan Komutlar
+
+- Sil/Temizle
+- Mute/Unmute

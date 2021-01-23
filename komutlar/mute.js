@@ -1,64 +1,124 @@
-const Discord = require('discord.js');
-const database = require('quick.db');
-const ms = require('ms');
-const moment = require('moment');
-const ayarlar = require("../ayarlar.json");
-moment.locale('tr');
+const Discord = require('discord.js')
+const ayar = require('../ayarlar.json')
+const db = require('quick.db')
+const ms = require('ms')
+const moment = require('moment')
+const momentt = require("moment-duration-format")
+exports.run = async(client, message, args) => {
+    
+  const permError = new Discord.MessageEmbed()
+    .setColor('RED')
+    .setTitle('Başarısız')
+    .setAuthor(message.author.tag, message.author.avatarURL({ size:1024, dynamic:true, format: "png"}))
+    .setDescription(`Bu Komutu Kullanmak İçin <@&${ayar.muteYetkiliRolID}> Yetkisine Sahip Olmalısın!`)
+  
+  const bisey = new Discord.MessageEmbed()
+    .setColor('RED')
+    .setTitle('<a:red:785543516776300544> Başarısız')
+    .setAuthor(message.author.tag, message.author.avatarURL({ size:1024, dynamic:true, format: "png"}))
+    .setDescription('Mutelemem İçin Bir Kullanıcı Etiketlemelisin!')
+  
+  const bisey2 = new Discord.MessageEmbed()
+    .setColor('RED')
+    .setTitle('<a:red:785543516776300544> Başarısız')
+    .setAuthor(message.author.tag, message.author.avatarURL({ size:1024, dynamic:true, format: "png"}))
+    .setDescription('Etiketlediğiniz Kullanıcı Sizden Üstte veya Aynı Pozisyonda Olduğundan Dolayı Muteleyemiyorum!')
 
-exports.run = async (client, message, args) => {
+    if (!message.member.roles.cache.has(ayar.muteYetkiliRolID)) return message.channel.send(permError); 
 
-if(!args[0]) return message.channel.send('Bir kullanıcıyı etiketlemelisin.');
-if(!message.mentions.members.first()) return message.channel.send('Etiketlediğin kullanıcıyı bulamıyorum.');
-let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-if(!member) return message.channel.send('Etiketlediğin kullanıcıyı bulamıyorum.');
+    let member = message.mentions.users.first()
+    let py = message.guild.member(member)
+    if(!member) return message.channel.send(bisey)
+    if(py.roles.highest.position >= message.member.roles.highest.position) return message.channel.send(bisey2)
 
-let argument_one = ['saniye', 'dakika', 'saat', 'gün'];
-if(!args[1]) return message.channel.send(`Bir süre belirtmelisin.\nÖrnek: !mute ${message.mentions.members.first()} 5 gün reklam`);
-if(!args[2]) return message.channel.send(`Geçerli bir zaman belirtmelisin.\n${argument_one.map(a => `**${a}**`).join('/')}`)
-if(!argument_one.includes(args[2])) return message.channel.send(`Geçerli bir zaman belirtmelisin.\n${argument_one.map(a => `**${a}**`).join('/')}`)
+    let zaman = args[1]
+    .replace('sn', 's')
+    .replace('dk', 'm')
+    .replace('sa', 'h')
+    .replace('gün', 'd')
 
-let reason = 'Bir sebep girilmemiş.';
-if(args[3]) reason = args.slice(3).join(' ');
-let end = Date.now()+ms(args[1]+' '+args[2].replace('dakika', 'minutes').replace('saat', 'hours').replace('saniye', 'seconds').replace('gün', 'day'));
+    var vakit = zaman
+    .replace('s', 'saniye')
+    .replace('m', 'dakika')
+    .replace('h', 'saat')
+    .replace('d', 'd')
 
-database.set(member.user.id, { 
-end: end,
-start: Date.now(),
-moderatorUsername: message.author.username,
-moderatorID: message.author.id,
-moderatorAvatarURL: message.author.displayAvatarURL({ dynamic: true }),
-reason: reason
-});
+    let sebep = args.slice(2).join(' ')
+    if(!sebep) sebep = 'Belirtilmedi'
+    //------------------------------//
+   db.set(`muteli_${message.guild.id + py.id}`, 'muteli')
+   db.set(`süre_${message.mentions.users.first().id + message.guild.id}`, zaman)
+   db.add(`mute.${message.author.id}`, 1)
+   db.add(`toplam.${message.author.id}`, 1)
+   //----------------------------------//
+    try {
+      py.roles.add(ayar.mutedRolID)
+   client.channels.cache.get(ayar.muteLogKanalID).send(
+       new Discord.MessageEmbed()
+       .setTitle(`${client.user.username} - Mute`)
+       .setAuthor(message.author.username, message.author.avatarURL ({dynamic: true}))
+       .setDescription(`<@${py.id}>, adlı kullanıcı susturuldu.
+       
+       - Mute Atan Yetkili: <@${message.author.id}> / **${message.author.id}**
+       
+       - Mute Atılan Kullanıcı: <@${py.id}> / **${py.id}**
+       
+       - Mute Sebebi: **${sebep}**
+       
+       - Mute Süresi: **${zaman}**`)
+       .setFooter('© Nobles 2019')
+       .setTimestamp()
+       );
+      
+      message.channel.send(
+       new Discord.MessageEmbed()
+       .setTitle(`${client.user.username} - Mute`)
+       .setAuthor(message.author.username, message.author.avatarURL ({dynamic: true}))
+       .setDescription(`<@${py.id}>, adlı kullanıcı susturuldu.
+       
+       - Mute Atan Yetkili: <@${message.author.id}> / **${message.author.id}**
+       
+       - Mute Atılan Kullanıcı: <@${py.id}> / **${py.id}**
+       
+       - Mute Sebebi: **${sebep}**
+       
+       - Mute Süresi: **${zaman}**`)
+       .setFooter('© Nobles 2019')
+       .setTimestamp()
+       );
+       
+    } catch (e) {
+        console.log(e);
+    }
+       setTimeout(async function() {
+        py.roles.remove(ayar.mutedRolID)
+          client.channels.cache.get(ayar.muteLogKanalID).send(
+              new Discord.MessageEmbed()
+              .setTitle(`${client.user.username} - Mute`)
+              .setAuthor(message.author.username, message.author.avatarURL ({dynamic: true}))
+              .setDescription(`<@${py.id}>, adlı kullanıcı susturulması kaldırıldı.
+              
+              - Mute Atan Yetkili: <@${message.author.id}> / **${message.author.id}**
+              
+              - Mute Kalkan Kullanıcı: <@${py.id}> / **${py.id}**
+              
+              - Mute Sebebi: **${sebep}**
+              
+              - Mute Süresi: **${zaman}**`)
+              .setFooter('© Nobles 2019')
+              .setTimestamp())
+    }, ms(zaman));
+}
 
-let logChannelID = ayarlar.muteLogKanalID;
-let logChannel = await message.guild.channels.cache.get(logChannelID);
-
-
-member.roles.add(ayarlar.mutedRolID);
-const embed = new Discord.MessageEmbed()
-.setAuthor(message.author.username, message.author.avatarURL({dynamic: true}))
-.setTitle('Birisi susturuldu!')
-.setColor('RED')
-.setDescription(`**• Moderatör**: ${message.author}
-**• Susturulan**: <@!${member.user.id}>
-**• Sebep**: ${reason}
-**• Bitiş zamanı:**: ${moment(end+ms('3h')).format('DD.MM.YYYY - HH:mm:ss')}`);
-message.channel.send(`Başarılı, ***${member.user.tag}*** susturuldu.`);
-logChannel.send(embed);
-setTimeout(() => {
-return member.roles.remove(ayarlar.mutedRolID).then(() => database.delete(member.user.id) && logChannel.send(embed.setColor('GREEN').setTitle('Susturulması açıldı.').setDescription(`**• Moderatör**: ${message.author}
-**• Susturulan**: <@!${member.user.id}>
-**• Sebep**: ${reason}`)));
-}, ms(args[1]+' '+args[2].replace('dakika', 'minutes').replace('saat', 'hours').replace('saniye', 'seconds').replace('gün', 'day')));
-
-};
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: [],
+  guildOnly: true,
+  aliases: ['sustur'],
   permLevel: 0
 };
- 
+
 exports.help = {
-  name: 'mute'
+  name: 'mute',
+  description: 'mute atar',
+  usage: 'mute'
 };
