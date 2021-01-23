@@ -21,3 +21,6 @@ Oynuyor events/ready.js İçinde
 - Jail/Unjail
 - Say
 - Snipe
+- Kilit/Kilit Aç
+- Ses Kes
+- Git/Gel
