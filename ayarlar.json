@@ -15,7 +15,8 @@
   "mutedRolID": "",
   "mutedRolİsim": "",
   "jailedRolID": "",
-  "jailedRoldİsim": "",
+  "jailedRolİsim": "",
+  "tagRolID": "",
   
   "muteLogKanalID": "",
   "unmuteLogKanalID": "",
@@ -24,5 +25,6 @@
   "vmuteLogKanalID": "",
   "unvmuteLogKanalID": "",
   "jailLogID": "",
-  "unjailLogID": ""
+  "unjailLogID": "",
+  "tagRolLogID": ""
 }

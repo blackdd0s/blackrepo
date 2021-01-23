@@ -91,19 +91,19 @@ data.delete(`display.${message.author.id}.${message.guild.id}`)
 })
 
 client.on('guildMemberAdd', async(member) => {
-let rol = member.guild.roles.cache.find(r => r.name === ayarlar.jailedRoldİsim);
+let rol = member.guild.roles.cache.find(r => r.name === ayarlar.jailedRolİsim);
 let cezalımı = db.fetch(`cezali_${member.guild.id + member.id}`)
 let sürejail = db.fetch(`süreJail_${member.id + member.guild.id}`)
 if (!cezalımı) return;
 if (cezalımı == "cezali") {
-member.roles.add(ayarlar.jailedRoldID)
+member.roles.add(ayarlar.jailedRolID)
  
 member.send("Cezalıyken Sunucudan Çıktığın için Yeniden Cezalı Rolü Verildi!")
  setTimeout(function(){
     // msg.channel.send(`<@${user.id}> Muten açıldı.`)
 db.delete(`cezali_${member.guild.id + member.id}`)
     member.send(`<@${member.id}> Cezan açıldı.`)
-    member.roles.remove(ayarlar.jailedRoldID);
+    member.roles.remove(ayarlar.jailedRolID);
   }, ms(sürejail));
 }
 })
@@ -121,8 +121,8 @@ client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
   const tag = ayarlar.tag
   const sunucu = ayarlar.sunucuID
-  const kanal = 'KANAL ID'
-  const rol = 'ROL ID'
+  const kanal = ayarlar.tagRolLogID
+  const rol = ayarlar.tagRolID
 
   try {
 
