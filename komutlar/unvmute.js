@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
   
 if (!message.member.roles.cache.has(ayarlar.vmuteYetkilisiRolID)) return message.channel.send(permError); 
   
-const mutelog = message.guild.channels.cache.find(c => c.id === ayarlar.vmuteLogKanalID)
+const mutelog = message.guild.channels.cache.find(c => c.id === ayarlar.unvmuteLogKanalID)
 
 let kullanici = message.mentions.members.first()  || message.guild.members.cache.get(args[0]);
 if(!kullanici) return message.channel.send(new MessageEmbed().setDescription(`${message.author}, bir kullanıcı etiketle.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));

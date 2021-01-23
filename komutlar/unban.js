@@ -12,7 +12,7 @@ const permError = new MessageEmbed()
   
 if (!message.member.roles.cache.has(ayarlar.banYetkiliRolID)) return message.channel.send(permError); 
 
-const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.banLogKanalID)
+const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.unbanLogKanalID)
 
   
 let kisi = await client.users.fetch(args[0]);

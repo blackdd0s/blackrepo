@@ -7,8 +7,12 @@
   "vmuteYetkilisiRolID": "",
   "banYetkiliRolID": "",
   "mutedRolID": "",
+  "mutedRolİsim": "",
   
   "muteLogKanalID": "",
+  "unmuteLogKanalID": "",
   "banLogKanalID": "",
-  "vmuteLogKanalID": ""
+  "unbanLogKanalID": "",
+  "vmuteLogKanalID": "",
+  "unvmuteLogKanalID": ""
 }
