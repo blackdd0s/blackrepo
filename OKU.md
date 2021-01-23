@@ -20,3 +20,4 @@ Oynuyor events/ready.js İçinde
 - Afk
 - Jail/Unjail
 - Say
+- Snipe
