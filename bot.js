@@ -247,3 +247,9 @@ client.login(ayarlar.token);
 client.on("ready", () => {
   client.channels.cache.get("844868763060928522").join();
 })
+
+client.on("guildMemberUpdate", async (client, OLD, NEW) => {
+if(!OLD.premiumSince && NEW.premiumSince) {
+client.channels.cache.get('844671875568500758').send(`${NEW.user.username} Adlı Kullanıcı Sunucumuza Boost Bastı! Teşekkür Ederiz <3`)
+}
+})
