@@ -26,5 +26,5 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'sagtik-koruma'
+    name: 'sagtik-koruma'
 }; 
