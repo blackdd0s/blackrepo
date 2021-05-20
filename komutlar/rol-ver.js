@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
 user.roles.add(rol)
 const embed = new Discord.MessageEmbed()
         .setDescription(`${user} kullanıcısından başarıyla ${rol} rolü verildi!`)
-        .setFooter('plasmic agalar', client.user.avatarURL())
+        .setFooter('✧ LEXBER', client.user.avatarURL())
         .setColor("RANDOM")
         .setTimestamp()
     message.channel.send(embed)
