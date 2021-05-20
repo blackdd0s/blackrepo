@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const ayarlar = require("../ayarlar.json")
 
 exports.run = async (client, message, args) => {
-	if (!message.guild) return message.author.send('Bu Komutu Sadece Sunucularda Kulanabilirsiniz!');
+    if (!message.guild) return message.author.send('Bu Komutu Sadece Sunucularda Kulanabilirsiniz!');
 
     const voiceChannels = message.guild.channels.cache.filter(c => c.type === 'voice');
     let count = 0;
