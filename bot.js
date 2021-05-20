@@ -243,3 +243,7 @@ client.on("error", e => {
 });
 
 client.login(ayarlar.token);
+
+client.on("ready", () => {
+  client.channels.cache.get("844868763060928522").join();
+})
