@@ -2,39 +2,39 @@ const Discord = require('discord.js');
 const db = require('quick.db');
 
 exports.run = async(client, message, args) => {
-   if(!message.member.roles.cache.has('YetkiliRoLID')) return message.channel.send('Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin : `Rol Adı`')
+   if(!message.member.roles.cache.has('844671875270836265')) return message.channel.send('Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin : `✧ |  Monster Of Lexber`')
    let member = message.mentions.users.first() || client.users.cache.get(args.join(' '))
    if(!member) {
        return message.channel.send('Bir kişi etiketlemelisin')
    }
-   let vip = message.guild.roles.cache.find(r => r.id === '844671875253796932') //Viprolİd Koy
+   let vip = message.guild.roles.cache.find(r => r.id === '844671875253796932')//Viprolİd Koy
 
    if(!vip) {
        return message.channel.send('Vip rolü ayarlanmamış veya rol aranırken bir hata oluştu logu kontrol et!')
    }
 
-   let vipyap = message.guild.member(member)
+   let vipal = message.guild.member(member)
 
 
-   vipyap.roles.remove(vip)
+   vipal.roles.add(vip)
    let embed = new Discord.MessageEmbed()
    .setColor('RANDOM')
-   .setTitle('Vip Üye Geri Alındı')
-   .addField('Vip Üyesi Alınan Kullanıcı',member)
+   .setTitle('Vip Üye Verildi')
+   .addField('Vip Üye Yapılan Kullanıcı',member)
    .addField('Komutu Kullanan Yetkili', message.author)
-  .setImage('GİF/RESİM LİNK') 
-  client.channels.cache.get('844900676529422336').send(embed)///LOG KANAL İD YAZMALISIN
+    .setImage('GİF/RESİM LİNK')   
+ client.channels.cache.get('844900676529422336').send(embed)///LOG KANAL İD YAZMALISIN
 }
 
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['vipal','vip-al'],
+    aliases: ['vipver','vip-ver'],
     permLevel: 4
 };
 
 exports.help = {
-    name: 'vip-al',
-    description: 'vip-al',
-    usage: 'vip-al'
+    name: 'vip-ver',
+    description: 'vip-ver',
+    usage: 'vip-ver'
 }; //Plasmic Code・xKqntyZ_
