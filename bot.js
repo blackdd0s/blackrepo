@@ -273,3 +273,33 @@ console.log('sagtik koruma')
 client.on("ready", () => {
   client.channels.cache.get("844868763060928522").join();
 })
+
+client.on("message", message => {
+    if(message.content.toLowerCase() == "tag") 
+    return message.channel.send(`✧`)
+});
+
+client.on("userUpdate", async (oldUser, newUser) => {
+  if (oldUser.username !== newUser.username) {
+  const tag = '✧'
+  const sunucu = '844671875232563210'
+  const log = '844869920172146688'
+  const rol = '844671875253796933'
+
+  try {
+
+  if (newUser.username.includes(tag) && !client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.cache.has(rol)) {
+  await client.channels.cache.get(log).send(new Discord.MessageEmbed().setColor("GREEN").setDescription(`${newUser} ${tag} Tagımızı Aldığı İçin <@&${rol}> Rolünü Verdim`));
+  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.add(rol);
+  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).send(`Selam ${newUser.username}, Sunucumuzda ${tag} Tagımızı Aldığın İçin ${client.guilds.cache.get(sunucu).roles.cache.get(rol).name} Rolünü Sana Verdim!`)
+  }
+  if (!newUser.username.includes(tag) && client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.cache.has(rol)) {
+  await client.channels.cache.get(log).send(new Discord.MessageEmbed().setColor("RED").setDescription(`${newUser} ${tag} Tagımızı Çıkardığı İçin <@&${rol}> Rolünü Aldım`));
+  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.remove(rol);
+  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).send(`Selam **${newUser.username}**, Sunucumuzda ${tag} Tagımızı Çıkardığın İçin ${client.guilds.cache.get(sunucu).roles.cache.get(rol).name} Rolünü Senden Aldım!`)
+  }
+} catch (e) {
+console.log(`Bir hata oluştu! ${e}`)
+ }
+}
+});
