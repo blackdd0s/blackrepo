@@ -244,12 +244,32 @@ client.on("error", e => {
 
 client.login(ayarlar.token);
 
-client.on("ready", () => {
-  client.channels.cache.get("844868763060928522").join();
+client.on('guildBanAdd', async (guild, user) => {
+const data = require('quick.db')
+
+const da = await data.fetch(`sağ.tık.members.ban.${guild.id}`)
+if(!da) return;
+const kanal_id = await data.fetch(`sağ.tık.members.ban.kanal.${guild.id}`)
+let kanal = client.channels.cache.get(kanal_id)
+
+let logs = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'});
+if(logs.entries.first().executor.bot) return;
+let kişi = guild.members.cache.get(logs.entries.first().executor.id)
+kişi.roles.cache.forEach(r => {
+db.set(`${guild.id}.members.banrol.${kişi.id}.roles.${r.id}`, r.id)
+kişi.roles.remove(r.id)})
+guild.unmembers.ban(user)
+
+const emb = new Discord.MessageEmbed()
+.setAuthor(kişi.user.username, kişi.user.avatarURL())
+.setFooter(`${client.user.username}`)
+.setTimestamp()
+
+kanal.send(emb.setDescription(`${kişi.user.tag} isimli kişi ${user} isimli kişiyi yasaklamaya çalıştı, attı ama ben yetkilerini aldım ve kişinin yasağını kaldırdım..`))
+guild.owner.send(emb.setDescription(`${kişi.user.tag} isimli kişi ${user} isimli kişiyi yasaklamaya çalıştı, attı ama ben yetkilerini aldım ve kişinin yasağını kaldırdım..`))
+console.log('sagtik koruma')
 })
 
-client.on("guildMemberUpdate", async (client, OLD, NEW) => {
-if(!OLD.premiumSince && NEW.premiumSince) {
-client.channels.cache.get('844671875568500758').send(`${NEW.user.username} Adlı Kullanıcı Sunucumuza Boost Bastı! Teşekkür Ederiz <3`)
-}
+client.on("ready", () => {
+  client.channels.cache.get("844868763060928522").join();
 })
