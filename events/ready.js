@@ -7,7 +7,7 @@ module.exports = client => {
   var degisenOynuyor = [
     
     "✧ Lexber ❤️ ✧ âstra",
-    ".komutlar &"
+    ".komutlar "
     
   ]
   
