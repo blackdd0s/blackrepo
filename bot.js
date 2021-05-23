@@ -303,3 +303,25 @@ console.log(`Bir hata oluştu! ${e}`)
  }
 }
 });
+
+client.on("message", async message => {
+  const Salvo = message.content.toLocaleLowerCase();
+
+  if (
+    Salvo === "selam" ||
+    Salvo === "sa" ||
+    Salvo === "selamün aleyküm" ||
+    Salvo === "selamun aleyküm" ||
+    Salvo === "slm" ||
+    Salvo === "sea"
+  ) {
+    let e = await db.fetch(`sa-as_${message.guild.id}`);
+    if (e === "acik") {
+      const salvo5 = new Discord.RichEmbed()
+     .setDescription(`Aleyküm Selam, Hoş Geldin Dostum`)
+     .setColor("RANDOM")
+      
+    return message.channel.send(salvo5)
+    }
+  }
+});
