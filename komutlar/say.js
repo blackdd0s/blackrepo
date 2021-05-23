@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
         .addField("Sunucudaki üye sayısı", message.guild.memberCount)
         .addField("Çevrimiçi üye sayısı", message.guild.members.cache.filter(m => !m.user.bot && m.user.presence.status !== "offline").size)
         .addField("Seslideki üye sayısı", count)
-        .addField("Tagdaki üye sayısı", message.guild.members.cache.filter(m => m.user.username.includes(tag)).size)
+        .addField("\:ucgen: Tagdaki üye sayısı", message.guild.members.cache.filter(m => m.user.username.includes(tag)).size)
     message.channel.send(codare);
 
 }
