@@ -1,26 +1,7 @@
-# YOUTUBE KANALIMA ABONE OLMAYI UNUTMAYIN
+PUBLİC MODERASYON BOT ALTYAPISI
 
-[Nobles Youtube Kanalına Gitmek İçin Tıkla](https://www.youtube.com/noblesyt)
+TOKEN .ENV DE
 
-[Nobles Discord Sunucusuna Gitmek İçin Tıkla](https://discord.gg/Rs5ss84)
+Aayarlar.json doldurduktan sonra bot aktif olucaktır
 
-# Bilgiler
-
-Oynuyor events/ready.js İçinde
-
-- Thanks Atmayanı ve Videoya Like Atmayanı Altyapı Siksin
-
-# Bulunan Komutlar
-
-- Sil-Temizle
-- Mute/Unmute
-- Ban/Unban
-- Vmute/Unvmute
-- Ban Sorgula
-- Afk
-- Jail/Unjail
-- Say
-- Snipe
-- Kilit/Kilit Aç
-- Ses Kes
-- Git/Gel
+DİSCORD SUNUCUMUZ --> https://discord.gg/9Y2UfAR98p
