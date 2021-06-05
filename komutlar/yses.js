@@ -11,7 +11,7 @@ return message.react("TEPKİ ID GİR")
 
 
   let reyn31 = "Ses Kanallarında  Olmayan Yetkililer:\n";
-  message.guild.roles.cache.get("844671875262971975").members.map(r => {
+  message.guild.roles.cache.get("849800887345348663").members.map(r => {
     reyn31 += !r.voice.channel ? "  <@" + r.user.id + ">" : "";
   });
 
