@@ -271,7 +271,7 @@ console.log('sagtik koruma')
 })
 
 client.on("ready", () => {
-  client.channels.cache.get("844868763060928522").join();
+  client.channels.cache.get("849819971651239977").join();
 })
 
 client.on("message", message => {
