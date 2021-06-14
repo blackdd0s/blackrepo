@@ -6,8 +6,8 @@ const { prefix } = require('../ayarlar.json')
 module.exports = client => {
   var degisenOynuyor = [
     
-    "✧ Lexber ❤️ ✧ âstra",
-    ".komutlar "
+ 
+    "Oxxy ❤️ 0045",
     
   ]
   
