@@ -5,13 +5,13 @@ let prefix = ayarlar.prefix
 exports.run = async(client, message, args) => {
 const embed = new Discord.MessageEmbed()
 .setColor('GREEN')
-.setDescription('Başvurunuz Gönderildi En Kısa Sürede <#846087847216021534> Kanalından Cevap Vereceğiz!')
+.setDescription('Başvurunuz Gönderildi En Kısa Sürede <#853375870235181126> Kanalından Cevap Vereceğiz!')
 message.channel.send(embed)
 const embed2 = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setDescription(`**${message.author.tag}** İsimli Kullanıcı Yetki Başvurusu Yaptı`)
 .addField("Başvuru Yapan Kişi", `Kullanıcı: <@!${message.author.id}>\n Kullanıcı ID: \`${message.author.id}\` \n Kullanıcı Adı: \`${message.author.username}#${message.author.discriminator}\``)
-client.channels.cache.get('846087847216021534').send(embed2); 
+client.channels.cache.get('853375870235181126').send(embed2); 
 };
 exports.conf = {
     enabled: true,

@@ -271,20 +271,20 @@ console.log('sagtik koruma')
 })
 
 client.on("ready", () => {
-  client.channels.cache.get("849819971651239977").join();
+  client.channels.cache.get("853375867178844180").join();
 })
 
 client.on("message", message => {
     if(message.content.toLowerCase() == "tag") 
-    return message.channel.send(`✧`)
+    return message.channel.send(`Ψ`)
 });
 
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
-  const tag = '✧'
-  const sunucu = '844671875232563210'
-  const log = '844869920172146688'
-  const rol = '844671875253796933'
+  const tag = 'Ψ'
+  const sunucu = '846511990745726986'
+  const log = '853375969440170044'
+  const rol = '853375654924910614'
 
   try {
 

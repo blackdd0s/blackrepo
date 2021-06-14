@@ -22,7 +22,7 @@ const Discord = require('discord.js');
        .setColor("#ffd100")
        .setThumbnail(client.user.avatarURL())
        .setTimestamp()
-       .setFooter('L E X B E R', client.user.avatarURL())
+       .setFooter('O xx Y', client.user.avatarURL())
 
        .addField(`** Oylama**`, `**${question}**`)).then(function(message) {
 
