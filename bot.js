@@ -61,34 +61,7 @@ db.delete(`muteli_${member.guild.id + member.id}`)
 }
 })
 
-client.on('message', async message => {
-if(message.channel.type === 'dm') return;
-if(await data.fetch(`afk.${message.author.id}.${message.guild.id}`) == undefined) return;
-const ms = require('ms')
 
-if(message.content.length > 2) {
-const sebepp = await data.fetch(`sebep.${message.author.id}.${message.guild.id}`)
-const sp = await data.fetch(`giriş.${message.author.id}.${message.guild.id}`)
-const asd = await data.fetch(`display.${message.author.id}.${message.guild.id}`)
-
-  let atılmaay = moment(Date.now()+10800000).format("MM")
-  let atılmagün = moment(Date.now()+10800000).format("DD")
-  let atılmasaat = moment(Date.now()+10800000).format("HH:mm:ss")
-  let atılma = `\`${atılmagün} ${atılmaay.replace(/01/, 'Ocak').replace(/02/, 'Şubat').replace(/03/, 'Mart').replace(/04/, 'Nisan').replace(/05/, 'Mayıs').replace(/06/, 'Haziran').replace(/07/, 'Temmuz').replace(/08/, 'Ağustos').replace(/09/, 'Eylül').replace(/10/, 'Ekim').replace(/11/, 'Kasım').replace(/12/, 'Aralık')} ${atılmasaat}\``
-
-
-message.guild.members.cache.get(message.author.id).setNickname(asd)
-message.channel.send(new Discord.MessageEmbed().setTitle(`${message.author.username}, hoşgeldin!`).setColor('GREEN').setDescription(`Afk modundan başarıyla çıkış yaptın.`)
-.addField('Giriş sebebin:', sebepp) 
-.addField('AFK olma zamanın:', sp)
-.addField('Çıkış zamanın:', atılma))
-data.delete(`afk.${message.author.id}.${message.guild.id}`)
-data.delete(`sebep.${message.author.id}.${message.guild.id}`)
-data.delete(`giriş.${message.author.id}.${message.guild.id}`)
-data.delete(`display.${message.author.id}.${message.guild.id}`)
-}
-
-})
 
 client.on('guildMemberAdd', async(member) => {
 let rol = member.guild.roles.cache.find(r => r.name === ayarlar.jailedRolİsim);
