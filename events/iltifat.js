@@ -4,7 +4,7 @@ let virus = 0;
 module.exports.event = async (vrs) => {
   if (vrs.author.bot || vrs.channel.id !== "850396576237223966") return;
   virus++;
-  if (virus >= 70) {
+  if (virus >= 10) {
     vrs.reply(virusSözler[Math.floor(Math.random() * virusSözler.length)]);
     virus = 0;
   };
