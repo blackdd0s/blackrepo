@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
   const salvo = new Discord.MessageEmbed()
   .addField("Hatalı Kullanım",`Örnek Kullanım: **${prefix}ever-here-engel aç/kapat**`)
   .setColor("RED")
-  .setFooter("LEXBER ❤")
+  .setFooter("")
   return message.channel.send(salvo)
   }
   if (args[0] == 'aç') {  
@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
   const salvo = new Discord.MessageEmbed() 
   .addField("İşlem Başarılı",`Ever-Here Engel Başarılı Bir Şekilde Aktif Edildi`)
   .setColor("GREEN")
-  .setFooter("LEXBER ❤")
+  .setFooter("")
   return message.channel.send(salvo)
   }
   if (args[0] == 'kapat') {
@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
   const salvo = new Discord.MessageEmbed() 
   .addField("İşlem Başarılı",`Ever-Here Engel Başarılı Bir Şekilde Kapatıldı`)
   .setColor("GREEN")
-  .setFooter("LEXBER ❤")
+  .setFooter("")
   return message.channel.send(salvo)
   } 
   }

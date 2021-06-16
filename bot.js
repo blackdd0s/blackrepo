@@ -254,7 +254,7 @@ client.on("message", message => {
 
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
-  const tag = 'Ψ'
+  const tag = '☆'
   const sunucu = '846511990745726986'
   const log = '853375969440170044'
   const rol = '853375654924910614'
@@ -334,7 +334,7 @@ client.on("message", async message => {
         if (uyarisayisi === null) {
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("LEXBER Reklam-Engel!")
+            .setTitle(" Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İlk Uyarın! (1/3)`
             )
@@ -345,7 +345,7 @@ client.on("message", async message => {
         if (uyarisayisi === 1) {
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("LEXBER Reklam-Engel!")
+            .setTitle(" Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İkinci Uyarın! (2/3)`
             )
@@ -356,11 +356,11 @@ client.on("message", async message => {
         if (uyarisayisi === 2) {
           message.delete();
           await kullanici.kick({
-            reason: `LEXBER | Reklam-Engel Sistemi!`
+            reason: ` | Reklam-Engel Sistemi!`
           });
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("LEXBER Reklam-Engel!")
+            .setTitle(" Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yaptığı İçin Sunucudan Atıldı! (3/3)`
             )
@@ -371,12 +371,12 @@ client.on("message", async message => {
         if (uyarisayisi === 3) {
           message.delete();
           await kullanici.ban({
-            reason: `LEXBER Reklam-Engel Sistemi!`
+            reason: ` Reklam-Engel Sistemi!`
           });
           db.delete(`reklamuyari_${message.author.id}`);
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("LEXBER Reklam Kick Sistemi")
+            .setTitle(" Reklam Kick Sistemi")
             .setDescription(
               `<@${message.author.id}> Atıldıktan Sonra Tekrar Reklam Yaptığı İçin Sunucudan Yasaklandı!`
             )

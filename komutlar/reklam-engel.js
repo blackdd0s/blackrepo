@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
     const salvo2 = new Discord.MessageEmbed()
   .addField("Hatalı Kullanım",`Örnek Kullanım **${prefix}reklam-engel aç & kapat**`)
   .setColor("RED")
-  .setFooter("LEXBBER ❤")
+  .setFooter("")
     message.channel.send(salvo2);
     return;
   }
@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
       const salvo3 = new Discord.MessageEmbed()
   .addField("Hata",`Reklam Engel Sistemi Zaten Açık`)
   .setColor("RED")
-  .setFooter("LEXBBER ❤")
+  .setFooter("")
       message.channel.send(salvo3);
       return;
     } else {
@@ -33,7 +33,7 @@ exports.run = async (client, message, args) => {
       const salvo4 = new Discord.MessageEmbed()
   .addField("İşlem Başarılı",`Reklam Engel Sistemi Başarılı Bir Şekilde Açıldı`)
   .setColor("GREEN")
-  .setFooter("LEXBBER ❤")
+  .setFooter("")
       message.channel.send(salvo4);
     }
   } else if (args[0] == "kapat") {
@@ -41,7 +41,7 @@ exports.run = async (client, message, args) => {
     const salvo5 = new Discord.MessageEmbed()
   .addField("İşlem Başarılı",`Reklam Engel Sistemi Başarılı Bir Şekilde Kapatıldıs`)
   .setColor("GREEN")
-  .setFooter("LEXBBER ❤")
+  .setFooter("")
     message.channel.send(salvo5);
   }
 };

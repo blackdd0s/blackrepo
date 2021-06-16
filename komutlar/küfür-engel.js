@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
         `Küfür Engel Başarılı Bir Şekilde Akif Edildi`
       )
       .setColor("GREEN")
-      .setFooter("LEXBER ❤");
+      .setFooter("");
     return message.channel.send(salvo);
   }
   if (args[0] === "kapat") {
@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
     const salvo = new Discord.MessageEmbed()
       .addField("İşlem Başarılı", `Küfür Engel Başarılı Bir Şekilde Kapatıldı`)
       .setColor("GREEN")
-      .setFooter("LEXBER ❤");
+      .setFooter("");
     return message.channel.send(salvo);
   }
   {
@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
         `Örnek Kullanım: **${prefix}küfür-engel aç/kapat**`
       )
       .setColor("RED")
-      .setFooter("LEXBER ❤");
+      .setFooter("");
     return message.channel.send(salvo);
   }
 };
