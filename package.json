@@ -25,7 +25,8 @@
     "discord.js-commando": "^0.12.3",
     "canvas": "^2.8.0",
     "node-fetch": "^3.0.0",
-    "parse-ms": "^3.0.0"
+    "parse-ms": "^3.0.0",
+    "node-events": "^0.0.2"
   },
   "engines": {
     "node": "12.x"
