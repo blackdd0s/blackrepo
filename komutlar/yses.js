@@ -4,14 +4,14 @@ module.exports.run = async (client, message, args) => {
 //-------------------------------------------------------------------------------\
 
 if(!["853375628388728892"].some(role => message.member.roles.cache.get(role)) && (!message.member.hasPermission("ADMINISTRATOR"))) 
-return message.react("TEPKİ ID GİR")
+return message.react("901426909806723072")
 
 //-------------------------------------------------------------------------------\
 
 
 
   let reyn31 = "Ses Kanallarında  Olmayan Yetkililer:\n";
-  message.guild.roles.cache.get("853375972983570432").members.map(r => {
+  message.guild.roles.cache.get("901353882679124007").members.map(r => {
     reyn31 += !r.voice.channel ? "  <@" + r.user.id + ">" : "";
   });
 

@@ -30,7 +30,7 @@ if(!message.member.roles.get("728100980024934480") && !message.member.hasPermiss
    
     
         setTimeout(() => {
-    let chan1 = client.channels.get("727908216708792435")
+    let chan1 = client.channels.get("901353883073413161")
 
         kullanici.setMute(false,`Süresi dolduğu için susturması kaldırıldı.`)
         chan1.sendEmbed(new Discord.RichEmbed().setDescription(`${kullanici} Adlı Kullanıcının **Ses Mute** süresi doldu`).setColor("RANDOM").setFooter(message.author.tag ,message.author.avatarURL)).then(m => m.delete(5000));

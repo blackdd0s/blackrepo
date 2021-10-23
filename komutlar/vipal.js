@@ -7,7 +7,7 @@ exports.run = async(client, message, args) => {
    if(!member) {
        return message.channel.send('Bir kişi etiketlemelisin')
    }
-   let vip = message.guild.roles.cache.find(r => r.id === '853375683761537024') //Viprolİd Koy
+   let vip = message.guild.roles.cache.find(r => r.id === '901353882679124001') //Viprolİd Koy
 
    if(!vip) {
        return message.channel.send('Vip rolü ayarlanmamış veya rol aranırken bir hata oluştu logu kontrol et!')
@@ -23,7 +23,7 @@ exports.run = async(client, message, args) => {
    .addField('Vip Üyesi Alınan Kullanıcı',member)
    .addField('Komutu Kullanan Yetkili', message.author)
   .setImage('GİF/RESİM LİNK') 
-  client.channels.cache.get('853375963826880522').send(embed)///LOG KANAL İD YAZMALISIN
+  client.channels.cache.get('901427358790197258').send(embed)///LOG KANAL İD YAZMALISIN
 }
 
 exports.conf = {

@@ -9,20 +9,20 @@ const Salvo = args.join(` `);
   if(!Salvo) message.channel.send(new Discord.MessageEmbed()
   .addField("Hatalı Kullanım",`Örnek Kullanım: **${prefix}sa-as aç & kapat**`)
   .setColor("RED")
-  .setFooter("LEXBBER ❤"))
+  .setFooter("Neptune Moderation"))
 if(Salvo === "aç") {
 db.set(`sa-as_${message.guild.id}`, `acik`);
 message.channel.send(new Discord.MessageEmbed()
   .addField("İşlem Başarılı",`Sa-As Sistemi Başarılı Bir Şekilde Açıldı`)
   .setColor("GREEN")
-  .setFooter("LEXBBER ❤"))
+  .setFooter("Neptune Moderation"))
 }
 else if(Salvo === "kapat") {
 db.set(`sa-as_${message.guild.id}`, `kapali`);
 message.channel.send(new Discord.MessageEmbed()
   .addField("İşlem Başarılı",`Sa-As Sistemi Başarılı Bir Şekilde Kapatıldı`)
   .setColor("GREEN")
-  .setFooter("LEXBBER ❤"))
+  .setFooter("Neptune Moderation"))
 }
 };
 
