@@ -1,5 +1,5 @@
 {
-    "kayıtsızrolid": "",
+    "kayıtsızrolid": "901353882662354957",
     "Ban": {
         "banyetkiliid": "901353882679124005",
         "banlogkanalid": "901696689117749288"
@@ -14,13 +14,13 @@
     },
     "Mute": {
         "muteyetkiliid": "901353882679124005",
-        "muterolid": "",
-        "mutelogkanalid": ""
+        "muterolid": "901353882662354955",
+        "mutelogkanalid": "901696752397209610"
     },
     "Jail": {
         "jailyetkiliid": "901353882679124005",
-        "jailrolid": "",
-        "jaillogkanalid": ""
+        "jailrolid": "901691925206294529",
+        "jaillogkanalid": "901696884706537472"
     },
     "Emojiler": {
         "başarılıemojiid": "<a:neptune_onay:901371805674115083>",

@@ -23,10 +23,10 @@ module.exports = {
         const acebots = new Discord.MessageEmbed()
             .setAuthor(`${message.guild.name} Sunucu İstatistik`)
             .setThumbnail(message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-            .setDescription(`> Sunucuda ki kişi sayısı: \`${toplam}\`
-        > Tagımızı bulunduran kişi sayısı: \`${tag}\`
-        > Sesli kanallarda bulunan kişi sayısı: \`${count}\`
-        > Sunucuda ki boost sayısı:  \`${boost}\` `);
+            .setDescription(`> **Sunucudaki kullanıcı sayısı:** \`${toplam}\`
+        > **Tagımızı alan kullanıcı sayısı:** \`${tag}\`
+        > **Sesli kanallarda bulunan kullanıcı sayısı:** \`${count}\`
+        > **Sunucudaki boost sayısı:**  \`${boost}\` `);
 
         message.channel.send(acebots);
 
