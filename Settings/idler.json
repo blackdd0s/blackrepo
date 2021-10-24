@@ -1,29 +1,29 @@
 {
     "kayıtsızrolid": "",
     "Ban": {
-        "banyetkiliid": "",
-        "banlogkanalid": ""
+        "banyetkiliid": "901353882679124005",
+        "banlogkanalid": "901696689117749288"
     },
     "Warn": {
-        "warnyetkiliid": "",
-        "warnlogkanalid": ""
+        "warnyetkiliid": "901353882679124005",
+        "warnlogkanalid": "901696922627215422"
     },
     "Kick": {
-        "kickyetkiliid": "",
-        "kicklogkanalid": ""
+        "kickyetkiliid": "901353882679124005",
+        "kicklogkanalid": "901696818180665355"
     },
     "Mute": {
-        "muteyetkiliid": "",
+        "muteyetkiliid": "901353882679124005",
         "muterolid": "",
         "mutelogkanalid": ""
     },
     "Jail": {
-        "jailyetkiliid": "",
+        "jailyetkiliid": "901353882679124005",
         "jailrolid": "",
         "jaillogkanalid": ""
     },
     "Emojiler": {
-        "başarılıemojiid": "",
-        "başarısızemojiid": ""
+        "başarılıemojiid": "<a:neptune_onay:901371805674115083>",
+        "başarısızemojiid": "<a:neptune_error:901371551092465684>"
     }
 }
