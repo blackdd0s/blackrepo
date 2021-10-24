@@ -24,7 +24,6 @@ module.exports = {
             .setAuthor(`${message.guild.name} Sunucu İstatistik`)
             .setThumbnail(message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
             .setDescription(`> **Sunucudaki kullanıcı sayısı:** \`${toplam}\`
-        > **Tagımızı alan kullanıcı sayısı:** \`${tag}\`
         > **Sesli kanallarda bulunan kullanıcı sayısı:** \`${count}\`
         > **Sunucudaki boost sayısı:**  \`${boost}\` `);
 
