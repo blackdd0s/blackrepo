@@ -15,7 +15,6 @@ module.exports = {
             > \`.avatar\` -> Avatarınızı gösterir.
             > \`.ban @üye <sebep>\` -> Üyeyi sunucudan yasaklar.
             > \`.çek @üye\` -> Üyeyi bulunduğunuz kanala çekersiniz.
-            > \`.emoji-ekle <link> <isim>\` -> Sunucuya emoji eklersiniz.
             > \`.git @üye\` -> Üyenin bulunduğu ses kanalına gidersiniz.
             > \`.jail @üye <sebep>\` -> Üyenin tüm rollerini alarak cezalıya atar.
             > \`.kick @üye <sebep>\` -> Üyeyi sunucudan atar.
