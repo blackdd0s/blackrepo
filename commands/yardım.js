@@ -12,7 +12,7 @@ module.exports = {
 
         message.channel.send(new Discord.MessageEmbed().setColor('#93ffb5').setAuthor(` ${message.guild.name} Yardım menüsü`)
             .setDescription(`
-            > \`+avatar\` -> Avatarınızı gösterir.
+            > \`+avatar\` -> **Avatarınızı gösterir.**
             > \`+ban @üye <sebep>\` -> **Üyeyi sunucudan yasaklar.**
             > \`+çek @üye\` -> **Üyeyi bulunduğunuz kanala çekersiniz.**
             > \`+git @üye\` -> **Üyenin bulunduğu ses kanalına gidersiniz.**
