@@ -107,6 +107,7 @@ client.on("guildMemberRemove", member => {
   db.set(`üye.${member.id}.roller2`, roller), db.set(`üye.${member.id}.isim`, isim)
 });
 
+
 client.on("guildMemberAdd", member => {
   if (!db.get(`üye.${member.id}.roller2`)) {
     member.roles.add(id.kayıtsızrolid), member.setNickname('İsim | Yaş')
