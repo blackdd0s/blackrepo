@@ -119,5 +119,5 @@ client.on("guildMemberAdd", member => {
   }
 });
 
-client.login(ayar.token),
-  console.log('Bot başarıyla giriş yaptı.')
+client.login(process.env.token),
+  console.log('Neptune Moderation Aktif!')
