@@ -29,9 +29,9 @@ module.exports = {
             > \`.unban <id>\` -> **Belirttiğiniz idnin yasaklamasını kaldırır.**
             > \`.unjail @üye\` -> **Üyeyi cezalıdan çıkararak eski rollerini geri verir.**
             > \`.unmute @üye\` -> **Üyenin metin kanallarında ki susturmasını açar.**
-            > \`+vmute @üye <sebep>\` -> **Üyeyi sesli kanallarda susturur.**
-            > \`+vunmute @üye\` -> **Üyenin sesli kanallarda ki susturmasını kaldırır.**
-            > \`+warn @üye <sebep>\` -> **Üyeyi özelden uyarır.**
+            > \`.vmute @üye <sebep>\` -> **Üyeyi sesli kanallarda susturur.**
+            > \`.vunmute @üye\` -> **Üyenin sesli kanallarda ki susturmasını kaldırır.**
+            > \`.warn @üye <sebep>\` -> **Üyeyi özelden uyarır.**
             
             `))
 
