@@ -126,9 +126,9 @@ client.login(process.env.token),
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
   const tag = '☆'
-  const sunucu = '903939837424468037'
-  const kanal = '903939837722247210'
-  const rol = '901353882679124002'
+  const sunucu = '888416016382693436'
+  const kanal = '896686628666482698'
+  const rol = '896668068162449408'
 
   try {
 
