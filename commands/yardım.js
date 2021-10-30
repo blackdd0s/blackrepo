@@ -10,7 +10,7 @@ module.exports = {
     aliases: [],
     async execute(client, message, args) {
 
-        message.channel.send(new Discord.MessageEmbed().setColor('#93ffb5').setAuthor(` ${message.guild.name} Yardım menüsü`)
+        message.channel.send(new Discord.MessageEmbed().setColor('#93ffb5').setAuthor(` ${message.guild.name} Yardım Menüsü`)
             .setDescription(`
             > \`.avatar\` -> **Avatarınızı gösterir.**
             > \`.ban @üye <sebep>\` -> **Üyeyi sunucudan yasaklar.**

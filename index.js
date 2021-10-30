@@ -121,13 +121,13 @@ client.on("guildMemberAdd", member => {
 });
 
 client.login(process.env.token),
-  console.log('Neptune Moderation Aktif!')
+  console.log('Nextena Moderation Aktif!')
 
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
-  const tag = 'Ψ '
-  const sunucu = '901353882662354954'
-  const kanal = '901371164650258514'
+  const tag = '☆'
+  const sunucu = '903939837424468037'
+  const kanal = '903939837722247210'
   const rol = '901353882679124002'
 
   try {
