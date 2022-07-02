@@ -1,29 +1,29 @@
 {
-    "kayıtsızrolid": "896668076953702410",
+    "kayıtsızrolid": "937389228046831691",
     "Ban": {
-        "banyetkiliid": "896668051200700438",
-        "banlogkanalid": "896668204812890162"
+        "banyetkiliid": "937389228193632304",
+        "banlogkanalid": "937389231486160965"
     },
     "Warn": {
-        "warnyetkiliid": "901353882679124005",
-        "warnlogkanalid": "901696922627215422"
+        "warnyetkiliid": "989799445661102121",
+        "warnlogkanalid": "989803596877017098"
     },
     "Kick": {
-        "kickyetkiliid": "901353882679124005",
-        "kicklogkanalid": "901696818180665355"
+        "kickyetkiliid": "937389228193632304",
+        "kicklogkanalid": "937389231486160965"
     },
     "Mute": {
-        "muteyetkiliid": "896668052131831919",
-        "muterolid": "896668061128593408",
-        "mutelogkanalid": "896668200568242176"
+        "muteyetkiliid": "937389228193632302",
+        "muterolid": "937389228076183600",
+        "mutelogkanalid": "989803436545572874"
     },
     "Jail": {
-        "jailyetkiliid": "896668054350618654",
-        "jailrolid": "896668090593587200",
-        "jaillogkanalid": "896668202032050177"
+        "jailyetkiliid": "937389228193632303",
+        "jailrolid": "937389228193632300",
+        "jaillogkanalid": "992676372646473729"
     },
     "Emojiler": {
-        "başarılıemojiid": "<a:neptune_onay:903998119769931816>",
-        "başarısızemojiid": "<a:neptune_error:903998119769931816>"
+        "başarılıemojiid": "<a:dark_tik2:989527930025672705>",
+        "başarısızemojiid": "<a:dark_carpi2:903998119769931816>"
     }
 }
