@@ -20,11 +20,14 @@ module.exports = {
         if (message.member.roles.highest.position <= üye.roles.highest.position) return message.lineReply('`Etiketlediğin kullanıcı senden üst veya senle aynı pozisyonda!`').then(x => x.delete({ timeout: 3000 }))
 
         let roller = üye.roles.cache
-
         db.push(`üye.${üye.id}.sicil`, { Yetkili: message.author.id, Tip: "JAIL", Sebep: sebep, Zaman: Date.now() }), db.set(`üye.${üye.id}.roller`, roller);
 
         client.channels.cache.get(id.Jail.jaillogkanalid).send(new Discord.MessageEmbed().setColor('#00ff66').setDescription(`${üye}\`(${üye.id})\` adlı üye, <@${message.author.id}>\`(${message.author.id})\` üyesi tarafından \`(${new Date().toTurkishFormatDate()})\` zamanında \`(${sebep})\` sebebiyle jaile atıldı.`))
-
-        üye.roles.set([id.Jail.jailrolid]), message.lineReply('`Etiketlenen üye başarıyla jaile atıldı!`').then(x => x.delete({ timeout: 9000 }), message.react(id.Emojiler.başarılıemojiid))
-    }
-}
+      
+      return üye.roles.cache.has('boosterrolid')
+    ? üye.roles.set(['boosterrolid', 'cezalı rol id'])
+    : üye.roles.set(['cezalorolid']);
+        
+      message.lineReply('`Etiketlenen üye başarıyla jaile atıldı!`').then(x => x.delete({ timeout: 9000 }), message.react(id.Emojiler.başarılıemojiid))
+    }//tmm dene bi işte aa
+}//tokeni sikim amk bkle bitti mi aw
