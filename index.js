@@ -123,7 +123,11 @@ client.on("guildMemberAdd", member => {
 client.login(process.env.token),
   console.log('The Kodes')
 
- client.on("ready", () => {
-        client.user.setPresence({ activity: { name: ayarlar.durum }, status: ayarlar.status });
-        console.log(`${client.user.username} Olarak Giriş Yapıldı Guard I Aktif`)
-    });
+client.on("ready", () => {
+    console.log(`${client.user.tag} İsmi İle Bot Aktif!`)
+    client.user.setActivity(`DarkSky ❤️ The Kodes`)
+});
+
+client.on("ready", () => {
+  client.channels.cache.get("992681158406066216").join();
+})
