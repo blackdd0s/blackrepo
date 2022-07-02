@@ -23,11 +23,9 @@ module.exports = {
         db.push(`üye.${üye.id}.sicil`, { Yetkili: message.author.id, Tip: "JAIL", Sebep: sebep, Zaman: Date.now() }), db.set(`üye.${üye.id}.roller`, roller);
 
         client.channels.cache.get(id.Jail.jaillogkanalid).send(new Discord.MessageEmbed().setColor('#00ff66').setDescription(`${üye}\`(${üye.id})\` adlı üye, <@${message.author.id}>\`(${message.author.id})\` üyesi tarafından \`(${new Date().toTurkishFormatDate()})\` zamanında \`(${sebep})\` sebebiyle jaile atıldı.`))
-      
-      return üye.roles.cache.has('boosterrolid')
-    ? üye.roles.set(['boosterrolid', 'cezalı rol id'])
-    : üye.roles.set(['cezalorolid']);
+        message.lineReply('`Etiketlenen üye başarıyla jaile atıldı!`').then(x => x.delete({ timeout: 9000 }), message.react(id.Emojiler.başarılıemojiid))
+      return üye.roles.cache.has('988767836484800566') ? üye.roles.set(['988767836484800566', '937389228193632300']) : üye.roles.set(['937389228193632300'])
         
-      message.lineReply('`Etiketlenen üye başarıyla jaile atıldı!`').then(x => x.delete({ timeout: 9000 }), message.react(id.Emojiler.başarılıemojiid))
-    }//tmm dene bi işte aa
-}//tokeni sikim amk bkle bitti mi aw
+      
+    }
+} 
