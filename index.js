@@ -123,3 +123,7 @@ client.on("guildMemberAdd", member => {
 client.login(process.env.token),
   console.log('The Kodes')
 
+ client.on("ready", () => {
+        client.user.setPresence({ activity: { name: ayarlar.durum }, status: ayarlar.status });
+        console.log(`${client.user.username} Olarak Giriş Yapıldı Guard I Aktif`)
+    });
