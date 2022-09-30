@@ -123,8 +123,6 @@ client.on("guildMemberAdd", member => {
 client.login(process.env.token),
   console.log('-yardım ❤️ BigBoss Premium')
 
-client.on("ready", () => { console.log(`${client.user.tag} İsmi İle Bot Aktif!`) client.user.setActivity(`-yardım ❤️ BigBoss Premium`) });
-
 client.on("ready", () => {
-  client.channels.cache.get("1019310133764964453").join();
+  client.channels.cache.get("983064043097047050").join();
 })
