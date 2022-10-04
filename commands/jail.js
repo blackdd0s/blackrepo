@@ -24,7 +24,7 @@ module.exports = {
 
         client.channels.cache.get(id.Jail.jaillogkanalid).send(new Discord.MessageEmbed().setColor('#00ff66').setDescription(`${üye}\`(${üye.id})\` adlı üye, <@${message.author.id}>\`(${message.author.id})\` üyesi tarafından \`(${new Date().toTurkishFormatDate()})\` zamanında \`(${sebep})\` sebebiyle jaile atıldı.`))
         message.lineReply('`Etiketlenen üye başarıyla jaile atıldı!`').then(x => x.delete({ timeout: 9000 }), message.react(id.Emojiler.başarılıemojiid))
-      return üye.roles.cache.has('988767836484800566') ? üye.roles.set(['988767836484800566', '937389228193632300']) : üye.roles.set(['937389228193632300'])
+      return üye.roles.cache.has('988767836484800566') ? üye.roles.set(['988767836484800566', '937389228193632300']) : üye.roles.set(['1026930714131845281'])
         
       
     }
