@@ -121,8 +121,8 @@ client.on("guildMemberAdd", member => {
 });
 
 client.login(process.env.token),
-  console.log('-yardım ❤️ BigBoss Premium')
+  console.log('-yardım ❤️ Chiru Premium')
 
 client.on("ready", () => {
-  client.channels.cache.get("983064043097047050").join();
+  client.channels.cache.get("1026930714568044695").join();
 })
