@@ -124,5 +124,5 @@ client.login(process.env.token),
   console.log('-yardım ❤️ Chiru Premium')
 
 client.on("ready", () => {
-  client.channels.cache.get("1026930714568044695").join();
+  client.channels.cache.get("967910909819383868").join();
 })
