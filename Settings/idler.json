@@ -1,29 +1,29 @@
 {
-    "kayıtsızrolid": "1026930714115047532",
+    "kayıtsızrolid": "800724542195892268",
     "Ban": {
-        "banyetkiliid": "1026930714232500243",
-        "banlogkanalid": "1026930717051060356"
+        "banyetkiliid": "800724542251204674",
+        "banlogkanalid": "1026956873422885044"
     },
     "Warn": {
-        "warnyetkiliid": "989799445661102121",
+        "warnyetkiliid": "800724542246223873",
         "warnlogkanalid": "989803596877017098"
     },
     "Kick": {
-        "kickyetkiliid": "1026930714115047529",
-        "kicklogkanalid": "1026930717051060356"
+        "kickyetkiliid": "800724542251204674",
+        "kicklogkanalid": "1026956873422885044"
     },
     "Mute": {
-        "muteyetkiliid": "1026930714115047531",
-        "muterolid": "1026930714115047533",
-        "mutelogkanalid": "1026930717051060354"
+        "muteyetkiliid": "800724542234165285",
+        "muterolid": "800724542195892270",
+        "mutelogkanalid": "1026956873422885044"
     },
     "Jail": {
-        "jailyetkiliid": "1026930714115047529",
-        "jailrolid": "1026930714131845281",
-        "jaillogkanalid": "1026930717051060355"
+        "jailyetkiliid": "800724542246223875",
+        "jailrolid": "800724542195892269",
+        "jaillogkanalid": "1026956873422885044"
     },
     "Emojiler": {
-        "başarılıemojiid": "<a:tikemoji:1026957479285882890>",
-        "başarısızemojiid": "<a:984066937506127939:1026963849951326249>"
+        "başarılıemojiid": "<a:yes:1028709270654570617>",
+        "başarısızemojiid": "<a:no:1028709270654570617>"
     }
 }
