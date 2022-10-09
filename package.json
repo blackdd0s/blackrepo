@@ -1,10 +1,10 @@
 {
-  "//1": "AceBots Gelişmiş Public Moderasyon Altyapısı",
-  "//2": "Abone Olmayı Unutmayın!",
-  "//3": "Projeyi Gizliye Alıp 'ÖNEMLİ' Kısmını Okumayı Unutmayınız...",
+  "//1": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
+  "//2": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
+  "//3": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
   "name": "hello-express",
   "version": "0.0.1",
-  "description": "Gelişmiş Public Moderasyon Botu Altyapısı",
+  "description": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
