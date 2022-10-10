@@ -121,8 +121,8 @@ client.on("guildMemberAdd", member => {
 });
 
 client.login(process.env.token),
-  console.log('+yardım ❤️ Chiru Premium')
+  console.log('Bot Aktif')
 
 client.on("ready", () => {
-  client.channels.cache.get("800724542263132178").join();
+  client.channels.cache.get("1029092050022437095").join();
 })
