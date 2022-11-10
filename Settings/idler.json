@@ -1,24 +1,24 @@
 {
     "kayıtsızrolid": "1039558394031378484",
     "Ban": {
-        "banyetkiliid": "1039558394090098726",
+        "banyetkiliid": "286645626530299906",
         "banlogkanalid": "1039558399999885352"
     },
     "Warn": {
-        "warnyetkiliid": "800724542246223873",
+        "warnyetkiliid": "286645626530299906",
         "warnlogkanalid": "989803596877017098"
     },
     "Kick": {
-        "kickyetkiliid": "800724542251204674",
+        "kickyetkiliid": "286645626530299906",
         "kicklogkanalid": "1040245969649930260"
     },
     "Mute": {
-        "muteyetkiliid": "1039558394090098724",
+        "muteyetkiliid": "286645626530299906",
         "muterolid": "800724542195892270",
         "mutelogkanalid": "1039558399811129362"
     },
     "Jail": {
-        "jailyetkiliid": "1039558394090098725",
+        "jailyetkiliid": "286645626530299906",
         "jailrolid": "1039558394043973724",
         "jaillogkanalid": "1039558399811129363"
     },
