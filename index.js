@@ -101,28 +101,28 @@ client.tarihHesapla = (date) => {
   return `\`${string} önce\``;
 };
 
-client.on("guildMemberRemove", member => {
-  let roller = member.roles.cache;
-  let isim = `${member.displayName.replace("`", "")} ${member.nickname ? "" : ""}`
-  db.set(`üye.${member.id}.roller2`, roller), db.set(`üye.${member.id}.isim`, isim)
-});
+//client.on("guildMemberRemove", member => {
+//  let roller = member.roles.cache;
+//  let isim = `${member.displayName.replace("`", "")} ${member.nickname ? "" : ""}`
+//  db.set(`üye.${member.id}.roller2`, roller), db.set(`üye.${member.id}.isim`, isim)
+//});
 
 
-client.on("guildMemberAdd", member => {
-  if (!db.get(`üye.${member.id}.roller2`)) {
-    member.roles.add(id.kayıtsızrolid), member.setNickname('İsim | Yaş')
-  } else {
-    let isim = db.get(`üye.${member.id}.isim`) || [];
-    let roller = db.get(`üye.${member.id}.roller2`) || [];
-    let rol = roller.filter(filterRole => filterRole.name !== '@everyone')
-    rol.forEach(async rols => { member.roles.add(rols.id), member.setNickname(isim) });
-    db.delete(`üye.${member.id}.roller2`), db.delete(`üye.${member.id}.isim`);
-  }
-});
+//client.on("guildMemberAdd", member => {
+//  if (!db.get(`üye.${member.id}.roller2`)) {
+//    member.roles.add(id.kayıtsızrolid), member.setNickname('İsim | Yaş')
+//  } else {
+//    let isim = db.get(`üye.${member.id}.isim`) || [];
+//    let roller = db.get(`üye.${member.id}.roller2`) || [];
+//    let rol = roller.filter(filterRole => filterRole.name !== '@everyone')
+//    rol.forEach(async rols => { member.roles.add(rols.id), member.setNickname(isim) });
+//    db.delete(`üye.${member.id}.roller2`), db.delete(`üye.${member.id}.isim`);
+//  }
+//});
 
 client.login(process.env.token),
   console.log('Bot Aktif')
 
 client.on("ready", () => {
-  client.channels.cache.get("1029092050022437095").join();
+  client.channels.cache.get("1039558397789487230").join();
 })
