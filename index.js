@@ -120,6 +120,8 @@ client.tarihHesapla = (date) => {
 //  }
 //});
 
+
+
 client.login(process.env.token),
   console.log('Bot Aktif')
 
