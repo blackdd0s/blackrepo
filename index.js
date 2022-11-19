@@ -126,5 +126,5 @@ client.login(process.env.token),
   console.log('Bot Aktif')
 
 client.on("ready", () => {
-  client.channels.cache.get("1039558397789487230").join();
+  client.channels.cache.get("1043450484343709709").join();
 })
