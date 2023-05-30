@@ -21,7 +21,6 @@ module.exports = {
             > \`.mute @üye <sebep>\` -> **Üyeyi metin kanallarında susturur.**
             > \`.rol <al/ver> @üye @rol\` -> **Kullanışınıza göre üyeye rol verir veya alır.**
             > \`.rolgöster <id>\` -> **Belirttiğiniz rol ile ilgili bilgiler verir.**
-            > \`.say\` -> **Sunucu bilgilerini verir.**
             > \`.sohbet <aç/kapat>\` -> **Kullanış amacınıza göre bulunduğunuz kanalı kapatır veya açar.**
             > \`.tempjail @üye <süre> <sebep>\` -> **Üyeyi süreli bir şekilde tüm rollerini alarak jaile atar.**
             > \`.tempmute @üye <süre> <sebep>\` -> **Üyeyi metin kanallarında süreli susturur.**

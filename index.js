@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 
   client.commands.set(command.name, command);
 }
-
+//parsher code
 client.on('message', async message => {
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -124,7 +124,7 @@ client.tarihHesapla = (date) => {
 
 client.login(process.env.token),
   console.log('Bot Aktif')
-
+// Alttaki id yazan yere kendi ses kanal id nizi girim
 client.on("ready", () => {
   client.channels.cache.get("1109783460354216056").join();
 })

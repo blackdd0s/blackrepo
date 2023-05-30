@@ -1,10 +1,10 @@
 {
-  "//1": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
-  "//2": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
-  "//3": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
+  "//1": "Parsher Code YouTube",
+  "//2": "Parsher Code YouTube",
+  "//3": "Parsher Code YouTube",
   "name": "hello-express",
   "version": "0.0.1",
-  "description": "bu altyapı cengizbeye aittir hiçbir youtube kanalında paylaşılmasına izin verilmez",
+  "description": "Parsher Code YouTube",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
