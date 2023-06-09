@@ -4,7 +4,7 @@ require('discord-reply');
 const db = require("quick.db");
 const id = require('../Settings/idler.json')
 const ayar = require('../Settings/config.json')
-
+// parsher youtube
 module.exports = {
     name: 'warn',
     aliases: ['uyar'],

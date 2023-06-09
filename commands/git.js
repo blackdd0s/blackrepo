@@ -5,7 +5,7 @@ const ms = require("ms");
 const db = require("quick.db");
 const id = require('../Settings/idler.json')
 const ayar = require('../Settings/config.json')
-
+// parsher youtube
 module.exports = {
     name: 'git',
     aliases: [],
